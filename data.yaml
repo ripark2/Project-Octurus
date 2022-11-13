@@ -1,0 +1,13 @@
+train: /content/yolov5/train/images
+val: /content/yolov5/valid/images
+test: /content/yolov5/test/images
+
+nc: 1
+names: ['Swiming-Pool']
+
+roboflow:
+  workspace: ani-n-nplf2
+  project: swimming_pool-m0emv
+  version: 11
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/ani-n-nplf2/swimming_pool-m0emv/dataset/11
