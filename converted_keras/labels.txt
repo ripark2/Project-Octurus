@@ -1,2 +1,0 @@
-0 Caution
-1 Normal
