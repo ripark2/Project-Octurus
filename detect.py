@@ -150,6 +150,7 @@ def run(
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(im.shape[2:], det[:, :4], im0.shape).round()
                 
+                # Coordinates of Bounding Boxes!!!
                 for *xyxy, conf, cls in reversed(det):
                   c1, c2 = (int(xyxy[0]), int(xyxy[1])), (int(xyxy[2]), int(xyxy[3]))
                   center_point = round((c1[0] + c2[0])/2), round((c1[1] + c2[1]) / 2)
