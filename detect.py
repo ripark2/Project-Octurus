@@ -150,18 +150,11 @@ def run(
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(im.shape[2:], det[:, :4], im0.shape).round()
                 
-                # Coordinates of Bounding Boxes!!!
-                for *xyxy, conf, cls in reversed(det):
-                  c1, c2 = (int(xyxy[0]), int(xyxy[1])), (int(xyxy[2]), int(xyxy[3]))
-                  center_point = round((c1[0] + c2[0])/2), round((c1[1] + c2[1]) / 2)
-                  circle = cv2.circle(im0, center_point, 5, (0,255,0), 2)
-                  text_coord = cv2.putText(im0, str(center_point), center_point, cv2.FONT_HERSHEY_PLAIN,2,(0,0,255))
-
 
                 # Print results
                 for c in det[:, -1].unique():
                     n = (det[:, -1] == c).sum()  # detections per class
-                    s += f"{n} {names[int(c)]}{center_point}{'s' * (n > 1)}, "  # add to string
+                    s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
