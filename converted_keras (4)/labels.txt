@@ -1,2 +1,0 @@
-0 Not Pool
-1 Pool Environment
